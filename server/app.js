@@ -7,13 +7,6 @@ const PORT = 5000;
 const mongoose = require('mongoose');
 const { MONGOURI } = require('./keys');
 
-// includes models
-require('./models/user');
-
-// include routes
-app.use(express.json()); //need to parse json data
-app.use(require('./routes/auth'));
-
 
 // lets write the mongodb connection code, mongoose works as a pipeline to connect to the mongodb database
 mongoose.connect(MONGOURI, {
@@ -30,6 +23,14 @@ mongoose.connection.on('error', (error) => {
 });
 
 
+// includes models
+require('./models/user');
+require('./models/post');
+
+// include routes
+app.use(express.json()); //need to parse json data
+app.use(require('./routes/auth'));
+app.use(require('./routes/post'));
 
 
 

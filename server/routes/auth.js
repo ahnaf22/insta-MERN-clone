@@ -11,11 +11,11 @@ const requireLogin = require('../middlewares/reqirelogin');
 // lets get the user model
 const User = mongoose.model("User");
 
-// protected route
-router.get('/protected', requireLogin, (req, res) => {
-    console.log("After middleware passed, User data: ", req.user);
-    res.send("Hello from protected route");
-});
+// protected route for checking
+// router.get('/protected', requireLogin, (req, res) => {
+//     console.log("After middleware passed, User data: ", req.user);
+//     res.send("Hello from protected route");
+// });
 
 
 // signup route

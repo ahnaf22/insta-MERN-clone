@@ -11,21 +11,20 @@ module.exports = (req, res, next) => {
         // lets get the token assigned for the user
         const token = authorization.replace("Bearer ", "");
         // lets verify the token with jwt verify which takes two params and returns a callback function
-        jwt.verify(token, JWT_SECRET, (err, payload) => {
+        jwt.verify(token, JWT_SECRET, async (err, payload) => {
             if (err) {
                 return res.status(401).json({ error: "you are not logged in" });
             } else {
                 const id = payload._id;
                 console.log("the payload of jwt: ", id);
                 // lets find the user from the payload id
-                User.findById(id).then(userData => {
+                await User.findById(id).then(userData => {
 
                     req.user = userData;
+                    req.user.password = undefined;
                     console.log("User data: ", req.user);
                 });
-
                 next();
-
             }
 
         });
