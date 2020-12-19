@@ -6,6 +6,28 @@ const requirelogin = require('../middlewares/reqirelogin');
 // get the Post model
 const Post = mongoose.model("Post");
 
+// get all the posts
+router.get('/allposts', (req, res) => {
+    Post.find()
+        .populate('postedBy', '-password')
+        .then(posts => {
+            return res.status(200).json({ posts: posts });
+        })
+        .catch(err => {
+            return res.status(400).json({ error: err });
+        });
+});
+// get all the posts create d by user
+router.get('/myposts', requirelogin, (req, res) => {
+    Post.find({ postedBy: req.user._id })
+        .populate('postedBy', '-password')
+        .then(posts => {
+            return res.status(200).json({ posts: posts });
+        })
+        .catch(err => {
+            return res.status(400).json({ error: err });
+        });
+});
 
 // creating a post  through api call
 router.post('/createpost', requirelogin, (req, res) => {
