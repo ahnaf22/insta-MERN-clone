@@ -1,0 +1,45 @@
+.loginform{
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loginform .card,.signupform .card{
+    text-align: center;
+    max-width: 400px;
+    padding:20px;
+}
+
+.loginform .card p,.signupform .card p{
+    color: gray;
+    font-size: 14px;
+    margin-top: 20px;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.loginform .card p>a,.signupform .card p>a{
+    color: #E91E63 !important;
+}
+
+.input-field{
+    margin:0;
+    margin-bottom:1rem;
+}
+
+.loginform .card-title,.signupform .card-title{
+    font-family:'Grand Hotel', cursive;
+}
+
+
+/* label focus color */
+.loginform .input-field input[type=email]:focus + label,
+.loginform .input-field input[type=password]:focus + label {
+    color: #E91E63 !important;
+}
+/* label underline focus color */
+.loginform .input-field input[type=email]:focus,
+.loginform .input-field input[type=password]:focus {
+    border-bottom: 1px solid #E91E63 !important;
+    box-shadow: 0 1px 0 0 #E91E63 !important;
+}

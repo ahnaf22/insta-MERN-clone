@@ -1,0 +1,21 @@
+.signupform{
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* label focus color */
+.signupform .input-field input[type=text]:focus + label,
+.signupform .input-field input[type=email]:focus + label,
+.signupform .input-field input[type=password]:focus + label {
+    color: #E91E63 !important;
+}
+/* label underline focus color */
+.signupform .input-field input[type=text]:focus,
+.signupform .input-field input[type=email]:focus,
+.signupform .input-field input[type=password]:focus {
+    border-bottom: 1px solid #E91E63 !important;
+    box-shadow: 0 1px 0 0 #E91E63 !important;
+}
+
