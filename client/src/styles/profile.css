@@ -5,7 +5,7 @@
 
 .profile .info-div-wrapper{
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     margin: 18px 0px;
     border-bottom: 1px solid grey;
 }
@@ -18,4 +18,5 @@
 
 .profile .gallery .gallery-item{
     width: 30%;
+    padding: 10px;
 }
