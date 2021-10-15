@@ -1,0 +1,21 @@
+.profile{
+    max-width: 60%;
+    margin: 0 auto;
+}
+
+.profile .info-div-wrapper{
+    display: flex;
+    justify-content: space-around;
+    margin: 18px 0px;
+    border-bottom: 1px solid grey;
+}
+
+.profile .gallery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.profile .gallery .gallery-item{
+    width: 30%;
+}
